@@ -8,3 +8,5 @@ export default function Footer() {
     </div>
   )
 }
+
+//<a href="https://www.vecteezy.com/free-vector/wave-logo">Wave Logo Vectors by Vecteezy</a>
