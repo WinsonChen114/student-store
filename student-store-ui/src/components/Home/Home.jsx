@@ -8,8 +8,17 @@ export default function Home({products, handleAddItemToCart, handleRemoveItemFro
   return (
     <div className="home">
       <Hero />
-      <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} 
+      <div id ="Buy">
+        <ProductGrid products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} 
       shoppingCart={shoppingCart}/>
+      </div>
+      <div id ="About">
+        <h3>About</h3>
+
+      </div>
+      <div id="Contact">
+        <h3>Contact Us</h3>
+      </div>
     </div>
   )
 }

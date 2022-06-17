@@ -4,3 +4,39 @@
     display: flex;
     justify-content: center;
 }
+
+.product-card .info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px lightgrey;
+}
+
+.product-card .main-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+}
+
+.product-card .actions {
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.product-card .buttons {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.product-card .quantity {
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 5px;
+}
