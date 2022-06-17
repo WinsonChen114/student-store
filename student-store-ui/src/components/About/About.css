@@ -1,15 +1,24 @@
-.subnavbar {
+.about {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.content {
+.about .content {
     display: flex;
     flex-direction: row;
-    background-color: deepskyblue;
+    background-color: powderblue;
     align-items: center;
     justify-content: center;
-    width: 70%;
+    width: 100%;
+}
+
+.text {
+    text-align: center;
+    width:50%
+}
+
+.about-img {
+    width:50%
 }
