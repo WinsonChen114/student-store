@@ -25,12 +25,11 @@ export default function ProductDetail({ handleAddItemToCart, handleRemoveItemFro
     }), [])
 
   return (
-    <><Hero />
       <div className="product-detail">
         {isFetching && <h1 className="loading">Loading...</h1>}
         {!error && <ProductView product={product} productId={productId} quantity={shoppingCart.find(x => x.itemId === product.id)?.quantity}
           handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} />}
         {error && <NotFound />}
-      </div></>
+      </div>
   )
 }

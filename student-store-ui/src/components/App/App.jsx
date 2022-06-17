@@ -2,6 +2,8 @@ import * as React from "react"
 import axios from "axios"
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
+import Hero from "../Hero/Hero"
+import SubNavbar from "../SubNavbar/SubNavbar"
 import Home from "../Home/Home"
 import ProductDetail from "../ProductDetail/ProductDetail"
 import NotFound from "../NotFound/NotFound"
@@ -98,6 +100,8 @@ export default function App() {
         <main>
           {/*Renders Navbar and Sidebar at every path*/}
           <Navbar />
+          <Hero />
+          <SubNavbar producta={products} setProducts={setProducts}/>
           <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             handleOnToggle={handleOnToggle} />
