@@ -6,7 +6,7 @@ export default function Logo() {
   return (
     <div className="logo">
       <Link to="/">
-        <img src="src/assets/Wave_logo.png" alt="Wave logo" width={60}/>
+        <img src="http://localhost:3000/src/assets/Wave_logo.png" alt="Wave logo" width={60}/>
       </Link>
     </div>
   )

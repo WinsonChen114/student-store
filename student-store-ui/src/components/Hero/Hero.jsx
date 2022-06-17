@@ -9,7 +9,7 @@ export default function Hero() {
           <h1>Welcome!</h1>
           <p>Please Buy Something</p>
         </div>
-        <img className="hero-img" src="src/assets/Whale.png" />
+        <img className="hero-img" src="http://localhost:3000/src/assets/Whale.png" />
       </div>
     </div>
   )

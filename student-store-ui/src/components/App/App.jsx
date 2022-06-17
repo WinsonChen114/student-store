@@ -13,13 +13,13 @@ export default function App() {
   //Array of products
   const [products, setProducts] = React.useState([])
   //Is API currently fetching products?
-  const [isFetching, setIsFetching] = React.useState(false)
+  const [isFetching, setIsFetching] = React.useState()
   //Holds an error from API
   const [error, setError] = React.useState("")
   //Is Sidebar open?
   const [isOpen, setIsOpen] = React.useState(false)
   //Shopping cart information
-  const [shoppingCart, setShoppingCart] = React.useState([{}])
+  const [shoppingCart, setShoppingCart] = React.useState([])
   //User Checkout Information
   const [checkoutForm, setCheckoutForm] = React.useState(["", ""])
 
@@ -59,16 +59,14 @@ export default function App() {
       newitem.quantity--
 
       //if the quantity is 0, remove it from the shopping cart
-      if(newitem.quantity === 0)
-      {
+      if (newitem.quantity === 0) {
         setShoppingCart(items.filter((item) => (item.itemId !== newitem.itemId)))
       }
       //Else, update the shopping cart
-      else
-      {
+      else {
         setShoppingCart(items.slice())
       }
-      
+
     }
     //Else do nothing
 
@@ -92,26 +90,26 @@ export default function App() {
       .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
       .catch((error) => { setError(error); console.log(error) })
 
-  },[])
-
-
+  }, [])
 
   return (
     <div className="app">
       <BrowserRouter>
         <main>
+          {/*Renders Navbar and Sidebar at every path*/}
+          <Navbar />
+          <Sidebar />
           <Routes>
-            {/*Renders Home, Navbar, and Sidebar at every path*/}
-            <Route path="/" element=
-              {<> <Navbar />
-                <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart}
-                  shoppingCart={shoppingCart} />
-                <Sidebar /> </>} />
-            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route path="/" element={<Home products={products} handleAddItemToCart={handleAddItemToCart}
+              handleRemoveItemFromCart={handleRemoveItemFromCart} shoppingCart={shoppingCart} />} />
+            <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={handleAddItemToCart}
+              handleRemoveItemFromCart={handleRemoveItemFromCart} isFetching={isFetching} setIsFetching={setIsFetching}
+              error={error} setError={setError} shoppingCart={shoppingCart} />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </BrowserRouter>
+
     </div>
   )
 }

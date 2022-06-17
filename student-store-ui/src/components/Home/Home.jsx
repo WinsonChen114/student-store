@@ -4,6 +4,7 @@ import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
 
 export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart, shoppingCart}) {
+  console.log(shoppingCart)
   return (
     <div className="home">
       <Hero />

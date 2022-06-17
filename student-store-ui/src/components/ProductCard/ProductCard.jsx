@@ -3,11 +3,11 @@ import "./ProductCard.css"
 import { formatPrice, } from "../../utils/format"
 import { Link, } from "react-router-dom"
 
-export default function ProductCard({ product, productId, quantity, handleAddItemToCart, handleRemoveItemFromCart, showDescription }) {
+export default function ProductCard({ product, productId, quantity = 0, handleAddItemToCart, handleRemoveItemFromCart, showDescription }) {
   return (
     <div className="product-card">
       <div className="media">
-        <Link to={"/product/" + product.id}>
+        <Link to={"/products/" + product.id}>
           <img src={product.image} />
         </Link>
       </div>
