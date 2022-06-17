@@ -101,7 +101,7 @@ export default function App() {
           {/*Renders Navbar and Sidebar at every path*/}
           <Navbar />
           <Hero />
-          <SubNavbar producta={products} setProducts={setProducts}/>
+          <SubNavbar products={products} setProducts={setProducts}/>
           <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
             handleOnToggle={handleOnToggle} />
