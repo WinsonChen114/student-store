@@ -32,32 +32,40 @@ export default function App() {
   function handleAddItemtoCart(productId) {
     let item = shoppingCart.find(x => x.itemId === productId)
     //If it exists, increment the quantity
-    if(item)
-    {
-
+    if (item) {
+      let items = shoppingCart
+      let newitem = items.find(x => x.itemId === productId)
+      newitem.quantity++
+      setShoppingCart(items)
     }
     //Else, insert item
-    else
-    {
-      setShoppingCart([...shoppingCart, {itemId: productId, quantity: 1}])
+    else {
+      setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }])
     }
+    console.log(shoppingCart)
   }
 
   //Removes item from cart
-  function handleRemoveItemFromCart(productId)
-  {
-    
+  function handleRemoveItemFromCart(productId) {
+    let item = shoppingCart.find(x => x.itemId === productId)
+    //If it exists, decrement the quantity
+    if (item) {
+
+      //if the quantity is 0, remove it from the shopping cart
+    }
+    //Else do nothing
+
   }
 
   //Changes Checkout Form information
-  function handleOnCheckoutFormChange()
-  {
+  function handleOnCheckoutFormChange(name, value) {
+
 
   }
+
   //Submits user's order to API
-  function handleOnSubmitCheckoutForm()
-  {
-    
+  function handleOnSubmitCheckoutForm() {
+
   }
   //Use Effect runs are startup, and whenever it is updated
   //Gets products from the API
@@ -73,18 +81,13 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Routes>
-
             {/*Renders Home, Navbar, and Sidebar at every path*/}
             <Route path="/" element=
               {<> <Navbar />
-                <Home />
+                <Home products={products} handleAddItemToCart={handleAddItemtoCart} handleRemoveItemFromCart={handleRemoveItemFromCart}/>
                 <Sidebar /> </>} />
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
-
-            {/* <Navbar />
-            <Sidebar />
-            <Home /> */}
           </Routes>
         </main>
       </BrowserRouter>

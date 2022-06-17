@@ -3,7 +3,7 @@ import "./Home.css"
 import Hero from "../Hero/Hero"
 import ProductGrid from "../ProductGrid/ProductGrid"
 
-export default function Home() {
+export default function Home({products, handleAddItemToCart, handleRemoveItemFromCart}) {
   return (
     <div className="home">
       <Hero />

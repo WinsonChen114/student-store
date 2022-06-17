@@ -1,0 +1,23 @@
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    background-color: deepskyblue;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.intro {
+    width:50%
+}
+
+.hero-img {
+    width:50%
+}
