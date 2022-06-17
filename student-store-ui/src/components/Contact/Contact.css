@@ -1,0 +1,22 @@
+.contact {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .content {
+    display: flex;
+    flex-direction: row;
+    background-color: powderblue;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width:100%
+}

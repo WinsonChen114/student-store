@@ -13,9 +13,9 @@ export default function Navbar() {
       <div className="links">
         <ul>
           <li><Link to={"/"}>Home</Link></li>
-          <li><Link to={"/#Aboutlink"}>About Us</Link></li>
-          <li><Link to={"/#Contactlink"}>Contact Us</Link></li>
-          <li><Link to={"/#Buylink"}>Buy Now</Link></li>
+          <li><Link to={"/#About"}>About Us</Link></li>
+          <li><Link to={"/#Contact"}>Contact Us</Link></li>
+          <li><Link to={"/#Buy"}>Buy Now</Link></li>
         </ul>
 
 
