@@ -1,5 +1,33 @@
 .product-grid {
     display: flex;
-    flex-direction: row;
+    width: 70%;
     flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-grid .product-card {
+    height: 350px;
+    width: 250px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px lightgray;
+}
+
+.product-grid .product-card .media {
+    height: 250px;
+    width: 100%;
+}
+
+.product-grid .product-card .media img {
+    height: 250px;
+    width: 248px;
+}
+
+.product-card .product-info {
+    flex: 1;
+    display: flex;
+    border-top: solid 1px var(--border-color);
 }
