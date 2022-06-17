@@ -19,7 +19,7 @@ export default function App() {
   //Is Sidebar open?
   const [isOpen, setIsOpen] = React.useState(false)
   //Shopping cart information
-  const [shoppingCart, setShoppingCart] = React.useState([])
+  const [shoppingCart, setShoppingCart] = React.useState([{}])
   //User Checkout Information
   const [checkoutForm, setCheckoutForm] = React.useState(["", ""])
 
@@ -29,20 +29,24 @@ export default function App() {
   }
 
   //Adds item to cart
-  function handleAddItemtoCart(productId) {
+  function handleAddItemToCart(productId) {
     let item = shoppingCart.find(x => x.itemId === productId)
     //If it exists, increment the quantity
     if (item) {
       let items = shoppingCart
       let newitem = items.find(x => x.itemId === productId)
       newitem.quantity++
-      setShoppingCart(items)
+
+      //Putting just items causes the React not to register the change, because shopping cart is still referencing the same array
+      //slice returns a new arry, empty parenthesis makes slice keep it the same
+      setShoppingCart(items.slice())
     }
     //Else, insert item
     else {
       setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }])
     }
-    console.log(shoppingCart)
+
+
   }
 
   //Removes item from cart
@@ -50,8 +54,21 @@ export default function App() {
     let item = shoppingCart.find(x => x.itemId === productId)
     //If it exists, decrement the quantity
     if (item) {
+      let items = shoppingCart
+      let newitem = items.find(x => x.itemId === productId)
+      newitem.quantity--
 
       //if the quantity is 0, remove it from the shopping cart
+      if(newitem.quantity === 0)
+      {
+        setShoppingCart(items.filter((item) => (item.itemId !== newitem.itemId)))
+      }
+      //Else, update the shopping cart
+      else
+      {
+        setShoppingCart(items.slice())
+      }
+      
     }
     //Else do nothing
 
@@ -75,7 +92,10 @@ export default function App() {
       .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
       .catch((error) => { setError(error); console.log(error) })
 
-  }, [])
+  },[])
+
+
+
   return (
     <div className="app">
       <BrowserRouter>
@@ -84,7 +104,8 @@ export default function App() {
             {/*Renders Home, Navbar, and Sidebar at every path*/}
             <Route path="/" element=
               {<> <Navbar />
-                <Home products={products} handleAddItemToCart={handleAddItemtoCart} handleRemoveItemFromCart={handleRemoveItemFromCart}/>
+                <Home products={products} handleAddItemToCart={handleAddItemToCart} handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  shoppingCart={shoppingCart} />
                 <Sidebar /> </>} />
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />

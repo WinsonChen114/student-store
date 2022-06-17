@@ -10,11 +10,12 @@
     flex-direction: row;
     background-color: deepskyblue;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     width: 70%;
 }
 
 .intro {
+    text-align: center;
     width:50%
 }
 
