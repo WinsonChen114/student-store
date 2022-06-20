@@ -4,7 +4,7 @@
 
 Selling merchandise in the modern era requires digital solutions. For this project, you'll be tasked with designing and constructing an online student store for the College of Codepath. The application entails a frontend user interface for potential customers to peruse the goods, and a backend API to handle data management. The API will be built with Node and Express and the UI will be built with React.
 
-// Include your gif here
+![](./student-store-ui/src/assets/website_demo.gif)
 
 ### Application Features
 
@@ -285,15 +285,15 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+The topics discussed in the lab did prepare me for the assignemnt for the most part, but I think more time could have been spent talking about useStates. It took me a while to figure out that the state would only update if the setState function was used on a new reference. I think a deeper discussion of this topic could have saved me a lot of time.
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+If I could do things differently, I would probably focus on getting more of the fuctionality of the website working and then focus on the CSS and look of the website. If I had more time, I would probably work on more of the stretch features, such as the checkout and calculations for the shopping cart
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+I think the project went pretty well, I got most of the features finished. One thing that was harder than it looked was getting the page to look how I wanted with CSS. Some of my peers had a hover effect on the items that I thought was pretty cool.
 
 ### Open-source libraries used
 
