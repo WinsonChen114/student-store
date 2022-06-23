@@ -34,7 +34,7 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
           </div>
         </div>
 
-        {/*Subtotal, tax and total*/}
+          {/*Subtotal, tax and total*/}
           <div className="receipt">
             <div className="subtotal">
               <span className="label">Subtotal</span>
@@ -42,11 +42,11 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
             </div>
             <div className="tax">
               <span className="label">Tax</span>
-              <span className="center">{formatPrice(subtotal*0.0875)}</span>
+              <span className="center">{formatPrice(subtotal * 0.0875)}</span>
             </div>
             <div className="total">
               <span className="label">Total</span>
-              <span className="center total-price">{formatPrice(subtotal*1.0875)}</span>
+              <span className="center total-price">{formatPrice(subtotal * 1.0875)}</span>
             </div>
 
           </div></>

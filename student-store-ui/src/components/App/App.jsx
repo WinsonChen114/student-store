@@ -23,7 +23,7 @@ export default function App() {
   //Shopping cart information
   const [shoppingCart, setShoppingCart] = React.useState([])
   //User Checkout Information
-  const [checkoutForm, setCheckoutForm] = React.useState(["", ""])
+  const [checkoutForm, setCheckoutForm] = React.useState({ email: "", name: "" })
 
   //Toggles Sidebar
   function handleOnToggle() {
@@ -74,15 +74,23 @@ export default function App() {
 
   //Changes Checkout Form information
   function handleOnCheckoutFormChange(name, value) {
-
-
+    setCheckoutForm({
+      ...checkoutForm,
+      [name]: value,
+    })
   }
 
   //Submits user's order to API
   function handleOnSubmitCheckoutForm() {
+    axios.post("https://codepath-store-api.herokuapp.com/store", { user: checkoutForm, shoppingCart: shoppingCart })
+      .then(() => {
+        setShoppingCart([])
+        setCheckoutForm({ email: "", name: "" })
+      })
+      .catch((error) => { setError(error); console.log(error) })
 
   }
-  //Use Effect runs are startup, and whenever it is updated
+  //Use Effect runs on startup, and whenever it is updated
   //Gets products from the API
   //Runs whenever things in the dependency array changes
   React.useEffect(() => {
@@ -99,10 +107,10 @@ export default function App() {
           {/*Renders Navbar and Sidebar at every path*/}
           <Navbar />
           <Hero />
-          <SubNavbar products={products} setProducts={setProducts}/>
+          <SubNavbar products={products} setProducts={setProducts} />
           <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-            handleOnToggle={handleOnToggle} />
+            handleOnToggle={handleOnToggle} error={error} />
           <Routes>
             <Route path="/" element={<>
               <Home products={products} handleAddItemToCart={handleAddItemToCart}
