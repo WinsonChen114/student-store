@@ -82,7 +82,7 @@ export default function App() {
 
   //Submits user's order to API
   function handleOnSubmitCheckoutForm() {
-    axios.post("https://codepath-store-api.herokuapp.com/store", { user: checkoutForm, shoppingCart: shoppingCart })
+    axios.post("http://localhost:3001/store", { user: checkoutForm, shoppingCart: shoppingCart })
       .then(() => {
         setShoppingCart([])
         setCheckoutForm({ email: "", name: "" })

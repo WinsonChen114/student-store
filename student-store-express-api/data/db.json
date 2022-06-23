@@ -145,5 +145,236 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:30:54.694Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:35:08.376Z"
+    },
+    {
+      "id": 17,
+      "name": "sdfdsf",
+      "email": "dfsd",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:36:00.082Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:36:01.061Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:36:01.202Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:36:01.343Z"
+    },
+    {
+      "id": 17,
+      "name": "sfsdf",
+      "email": "fdsf",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:36:06.111Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:36:27.228Z"
+    },
+    {
+      "id": 17,
+      "name": "12313",
+      "email": "3223",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:36:38.179Z"
+    },
+    {
+      "id": 17,
+      "name": "12313",
+      "email": "3223",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:36:45.699Z"
+    },
+    {
+      "id": 17,
+      "name": "12313",
+      "email": "3223",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:36:46.132Z"
+    },
+    {
+      "id": 17,
+      "name": "12313",
+      "email": "3223",
+      "order": {
+        "0": {
+          "itemId": 2,
+          "quantity": 3
+        }
+      },
+      "total": 4.5,
+      "createdAt": "2022-06-23T22:36:46.454Z"
+    },
+    {
+      "id": 17,
+      "name": "12313",
+      "email": "3223",
+      "order": {
+        "0": {
+          "itemId": 5,
+          "quantity": 3
+        }
+      },
+      "total": 22.5,
+      "createdAt": "2022-06-23T22:36:51.399Z"
+    },
+    {
+      "id": 17,
+      "name": "sdfdsf",
+      "email": "dsfds",
+      "order": {
+        "0": {
+          "itemId": 15,
+          "quantity": 2
+        },
+        "1": {
+          "itemId": 14,
+          "quantity": 2
+        }
+      },
+      "total": 259.96,
+      "createdAt": "2022-06-23T22:37:30.788Z"
+    },
+    {
+      "id": 17,
+      "name": "12313",
+      "email": "3223",
+      "order": {
+        "0": {
+          "itemId": 5,
+          "quantity": 3
+        }
+      },
+      "total": 24.468749999999996,
+      "createdAt": "2022-06-23T22:41:10.338Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:02.847Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:06.517Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:07.020Z"
+    },
+    {
+      "id": 17,
+      "name": "s",
+      "email": "s",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:10.034Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:10.724Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:10.904Z"
+    },
+    {
+      "id": 17,
+      "name": "",
+      "email": "",
+      "order": {},
+      "total": 0,
+      "createdAt": "2022-06-23T22:43:11.066Z"
+    }
+  ]
 }
