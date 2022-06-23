@@ -94,7 +94,7 @@ export default function App() {
   //Gets products from the API
   //Runs whenever things in the dependency array changes
   React.useEffect(() => {
-    axios.get("https://codepath-store-api.herokuapp.com/store")
+    axios.get("http://localhost:3001/store")
       .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
       .catch((error) => { setError(error); console.log(error) })
 

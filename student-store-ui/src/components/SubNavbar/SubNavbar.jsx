@@ -9,7 +9,7 @@ export default function SubNavbar({ products, setProducts }) {
     const [searchTerm, setSearchTerm] = React.useState("")
 
     React.useEffect(() => {
-        axios.get("https://codepath-store-api.herokuapp.com/store")
+        axios.get("http://localhost:3001/store")
             .then((response) => {
                 let newProducts = response.data.products
                 if (category !== "All Categories") {

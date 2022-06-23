@@ -12,7 +12,7 @@ export default function ProductDetail({ handleAddItemToCart, handleRemoveItemFro
   //Extracts product id from url
   const { productId } = useParams()
 
-  React.useEffect(() => axios.get("https://codepath-store-api.herokuapp.com/store/" + productId)
+  React.useEffect(() => axios.get("http://localhost:3001/store/" + productId)
     .then((response) => {
       setIsFetching(false)
       setProduct(response.data.product)
