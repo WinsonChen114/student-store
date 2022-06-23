@@ -39,9 +39,7 @@ export default function App() {
       let newitem = items.find(x => x.itemId === productId)
       newitem.quantity++
 
-      //Putting just items causes the React not to register the change, because shopping cart is still referencing the same array
-      //slice returns a new arry, empty parenthesis makes slice keep it the same
-      setShoppingCart(items.slice())
+      setShoppingCart([...items])
     }
     //Else, insert item
     else {
@@ -66,7 +64,7 @@ export default function App() {
       }
       //Else, update the shopping cart
       else {
-        setShoppingCart(items.slice())
+        setShoppingCart([...items])
       }
 
     }
