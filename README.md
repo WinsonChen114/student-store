@@ -290,11 +290,11 @@ The topics discussed in the lab did prepare me for the assignemnt for the most p
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-If I could do things differently, I would probably focus on getting more of the fuctionality of the website working and then focus on the CSS and look of the website. If I had more time, I would probably work on more of the stretch features, such as the checkout and calculations for the shopping cart
+If I could do things differently, I would probably focus on getting more of the fuctionality of the website working and then focus on the CSS and look of the website. If I had more time, I would probably work on more of the stretch features, such as the navigational bar and purchase list.
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-I think the project went pretty well, I got most of the features finished. One thing that was harder than it looked was getting the page to look how I wanted with CSS. Some of my peers had a hover effect on the items that I thought was pretty cool.
+I think the project went pretty well, I got all of the core features finished. One thing that was harder than it looked was getting the page to look how I wanted with CSS. Some of my peers had a hover effect on the items that I thought was pretty cool.
 
 ### Open-source libraries used
 
