@@ -19,7 +19,7 @@ Selling merchandise in the modern era requires digital solutions. For this proje
 - [X] User can click the '+' button on a product cart to increment that product in the shopping cart.
 - [X] User can click the '-' button on a product cart to increment that product in the shopping cart.
 - [X] Shopping cart displays a table of products, quantities, subtotal, tax, and total.
-- [ ] User can check out, and can view receipt upon completion.
+- [X] User can check out, and can view receipt upon completion.
 
 #### Stretch Features
 
@@ -81,19 +81,19 @@ The following specifications were met on the Express backend and the React front
           - [X] `name` - the `name` attribute of the input being updated
           - [X] `value` - the new value to set for that input
         - [X] It should update the `checkoutForm` object with the new value from the correct input(s)
-      - [ ] The **`handleOnSubmitCheckoutForm`** function. When called...
-        - [ ] It should submit the user's order to the API
-        - [ ] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
-        - [ ] The body of that `POST` request should be an object with two fields:
-          - [ ] The `user` field:
-            - [ ] Should be an object containing `name` and `email` properties
-            - [ ] Each property should be set to the correct value found in the `checkoutForm`
-          - [ ] The `shoppingCart` field:
-            - [ ] Should contain the user's order formatted as an array of objects.
-            - [ ] Each object in the array should have two fields:
-              - [ ] The `itemId` field should store the `id` of the item being purchased.
-              - [ ] The `quantity` field should store a number representing how many of that item the user is purchasing.
-            - [ ] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
+      - [X] The **`handleOnSubmitCheckoutForm`** function. When called...
+        - [X] It should submit the user's order to the API
+        - [X] To submit the user's order, it should leverage the `axios.post` method to send a `POST` request to the `/store` endpoint.
+        - [X] The body of that `POST` request should be an object with two fields:
+          - [X] The `user` field:
+            - [X] Should be an object containing `name` and `email` properties
+            - [X] Each property should be set to the correct value found in the `checkoutForm`
+          - [X] The `shoppingCart` field:
+            - [X] Should contain the user's order formatted as an array of objects.
+            - [X] Each object in the array should have two fields:
+              - [X] The `itemId` field should store the `id` of the item being purchased.
+              - [X] The `quantity` field should store a number representing how many of that item the user is purchasing.
+            - [X] Don't include the `total` price here, since we'll be calculating that on the backend. Remember to never trust the client!
 
 **Navbar.jsx**
 
@@ -235,9 +235,9 @@ The following specifications were met on the Express backend and the React front
   - [X] Should render a `button` element with the `className` of `checkout-button`.
     - [X] It should contain the text `Checkout`.
     - [X] When clicked, it should call the `handleOnSubmit` function.
-      - [ ] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
-      - [ ] If the `POST` request is successful...
-        - [ ] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.
+      - [X] If that request fails, the `CheckoutForm` component should display an error message inside an element with the `className` of `error`.
+      - [X] If the `POST` request is successful...
+        - [X] The `CheckoutForm` component should display a success message that contains the text `"Success!"` inside an element with the `className` of `success`.
         - [X] The `shoppingCart` should be emptied
         - [X] The `checkoutForm` should be reset to its default state.
 
@@ -249,7 +249,7 @@ The following specifications were met on the Express backend and the React front
 **Models** - The API should use a `Store` model that handles the following
   - [X] List all products currently in the `db.json` file
   - [X] Fetch a single product by its id
-  - [ ] Create a purchase order
+  - [X] Create a purchase order
 
 **Routes** - The API should contain a route mounted at the `/store` endpoint
   - [X] It should respond to `GET` requests to `/store` with an array of all products in the store in this format: `{ "products": products }`
@@ -264,9 +264,9 @@ The following specifications were met on the Express backend and the React front
           - [X] The `itemId` field should store the `id` of the item being purchased
           - [X] The `quantity` field should store a number representing how many of that item the user is purchasing.
       - [X] The `user` field should contain the name and email of the person placing the order.
-      - [ ] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
-      - [ ] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
-      - [ ] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
+      - [X] When either the `shoppingCart` or `user` fields are missing, it should throw a `400` error.
+      - [X] If there are duplicate items in the `shoppingCart`, it should throw a `400` error.
+      - [X] If either the `quantity` or `itemId` field is missing for any of the items in the `shoppingCart`, a `400` error should be thrown.
       - [X] When both are there, it should calculate the total cost of all the items (including quantities), add a `8.75%` tax to the total, and create a new purchase object containing 6 required fields and 1 optional field:
         - **required**:
           - [X] `id` - the new `id` of the purchase should be equal to one more than the current number of existing purchases

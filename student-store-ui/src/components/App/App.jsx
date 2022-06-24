@@ -12,18 +12,22 @@ import { BrowserRouter, Routes, Route, } from "react-router-dom";
 import "./App.css"
 
 export default function App() {
-  //Array of products
+  //Array of products, to be used for displaying products
   const [products, setProducts] = React.useState([])
   //Is API currently fetching products?
   const [isFetching, setIsFetching] = React.useState()
   //Holds an error from API
-  const [error, setError] = React.useState("")
+  const [error, setError] = React.useState()
   //Is Sidebar open?
   const [isOpen, setIsOpen] = React.useState(false)
   //Shopping cart information
   const [shoppingCart, setShoppingCart] = React.useState([])
   //User Checkout Information
   const [checkoutForm, setCheckoutForm] = React.useState({ email: "", name: "" })
+  //Receipt for Checkout
+  const [receipt, setReceipt] = React.useState({})
+  //Array of all of the products, functions as a lookup table
+  const [allProducts, setAllProducts] = React.useState([])
 
   //Toggles Sidebar
   function handleOnToggle() {
@@ -35,11 +39,8 @@ export default function App() {
     let item = shoppingCart.find(x => x.itemId === productId)
     //If it exists, increment the quantity
     if (item) {
-      let items = shoppingCart
-      let newitem = items.find(x => x.itemId === productId)
-      newitem.quantity++
-
-      setShoppingCart([...items])
+      item.quantity++
+      setShoppingCart([...shoppingCart])
     }
     //Else, insert item
     else {
@@ -51,20 +52,18 @@ export default function App() {
 
   //Removes item from cart
   function handleRemoveItemFromCart(productId) {
-    let item = shoppingCart.find(x => x.itemId === productId)
+    let item_remove = shoppingCart.find(x => x.itemId === productId)
     //If it exists, decrement the quantity
-    if (item) {
-      let items = shoppingCart
-      let newitem = items.find(x => x.itemId === productId)
-      newitem.quantity--
+    if (item_remove) {
+      item_remove.quantity--
 
       //if the quantity is 0, remove it from the shopping cart
-      if (newitem.quantity === 0) {
-        setShoppingCart(items.filter((item) => (item.itemId !== newitem.itemId)))
+      if (item_remove.quantity === 0) {
+        setShoppingCart(shoppingCart.filter((item) => (item.itemId !== item_remove.itemId)))
       }
       //Else, update the shopping cart
       else {
-        setShoppingCart([...items])
+        setShoppingCart([...shoppingCart])
       }
 
     }
@@ -83,9 +82,10 @@ export default function App() {
   //Submits user's order to API
   function handleOnSubmitCheckoutForm() {
     axios.post("http://localhost:3001/store", { user: checkoutForm, shoppingCart: shoppingCart })
-      .then(() => {
+      .then((response) => {
         setShoppingCart([])
         setCheckoutForm({ email: "", name: "" })
+        setReceipt({ ...response.data.purchase })
       })
       .catch((error) => { setError(error); console.log(error) })
 
@@ -95,7 +95,11 @@ export default function App() {
   //Runs whenever things in the dependency array changes
   React.useEffect(() => {
     axios.get("http://localhost:3001/store")
-      .then((response) => { setProducts(response.data.products); console.log(response.data.products) })
+      .then((response) => {
+        setProducts(response.data.products)
+        setAllProducts(response.data.products)
+        console.log(response.data.products)
+      })
       .catch((error) => { setError(error); console.log(error) })
 
   }, [])
@@ -108,9 +112,9 @@ export default function App() {
           <Navbar />
           <Hero />
           <SubNavbar products={products} setProducts={setProducts} />
-          <Sidebar isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm}
+          <Sidebar allProducts={allProducts} isOpen={isOpen} shoppingCart={shoppingCart} products={products} checkoutForm={checkoutForm}
             handleOnCheckoutFormChange={handleOnCheckoutFormChange} handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
-            handleOnToggle={handleOnToggle} error={error} />
+            handleOnToggle={handleOnToggle} error={error} setError={setError} receipt={receipt} />
           <Routes>
             <Route path="/" element={<>
               <Home products={products} handleAddItemToCart={handleAddItemToCart}
