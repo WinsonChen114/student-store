@@ -4,7 +4,7 @@ import "./NotFound.css"
 export default function NotFound() {
   return (
     <div className="not-found">
-      <p>NotFound</p>
+      <h1>Products Not Found</h1>
     </div>
   )
 }
