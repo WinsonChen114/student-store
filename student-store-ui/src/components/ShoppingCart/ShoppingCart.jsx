@@ -2,7 +2,7 @@ import * as React from "react"
 import "./ShoppingCart.css"
 import { formatPrice, } from "../../utils/format"
 
-export default function ShoppingCart({ isOpen, products, shoppingCart }) {
+export default function ShoppingCart({ isOpen, allProducts, shoppingCart }) {
   let subtotal = 0
   return (
     <div className="shopping-cart">
@@ -21,7 +21,7 @@ export default function ShoppingCart({ isOpen, products, shoppingCart }) {
             </div>
             {shoppingCart.map((item) => {
               //Corresponding item in product array
-              let product_item = products.find(x => x.id === item.itemId)
+              let product_item = allProducts.find(x => x.id === item.itemId)
               subtotal += item.quantity * product_item.price
               return (
                 <div className="product" key={product_item.name}>
