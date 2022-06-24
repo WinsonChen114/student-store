@@ -301,8 +301,8 @@ I think the project went pretty well, I got all of the core features finished. O
 
 ### Open-source libraries used
 
-- Add any links to open-source libraries used in your project.
+- Whale Image from Vecteezy.com
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to my podmates from Week 2 and 3, Robert, Katherin, Jenny, Miles, amd Lacie
