@@ -17,10 +17,7 @@ export default function Navbar() {
           <li><Link to={"/#Contact"}>Contact Us</Link></li>
           <li><Link to={"/#Buy"}>Buy Now</Link></li>
         </ul>
-
-
       </div>
-
     </nav>
   )
 }
